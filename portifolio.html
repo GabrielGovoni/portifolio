@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Govoni | Portfólio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navegação -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+            <!-- Logo e Nome no Cabeçalho -->
+            <a href="#hero" class="flex items-center space-x-3">
+                <img src="https://placehold.co/50x50/3b82f6/ffffff?text=GG" alt="Logo de Gabriel Govoni" class="w-12 h-12 rounded-full shadow-lg">
+                <span class="text-2xl font-bold text-gray-800">Gabriel Govoni</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-600 hover:text-blue-500" id="nav-about">Sobre Mim</a>
+                <a href="#experience" class="nav-link text-gray-600 hover:text-blue-500" id="nav-experience">Experiência</a>
+                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-500" id="nav-projects">Projetos</a>
+                <a href="#youtube" class="nav-link text-gray-600 hover:text-blue-500" id="nav-youtube">YouTube</a>
+                <a href="#education" class="nav-link text-gray-600 hover:text-blue-500" id="nav-education">Educação</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-500" id="nav-contact">Contato</a>
+            </div>
+            
+            <!-- Botões de Idioma -->
+            <div class="absolute top-4 right-6 flex space-x-2">
+                <button id="lang-pt" class="focus:outline-none text-xl p-1 bg-gray-200 rounded-full hover:bg-gray-300 transition-colors">🇧🇷</button>
+                <button id="lang-en" class="focus:outline-none text-xl p-1 bg-gray-200 rounded-full hover:bg-gray-300 transition-colors">🇺🇸</button>
+            </div>
+
+            <button id="menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4">
+            <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-about">Sobre Mim</a>
+            <a href="#experience" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-experience">Experiência</a>
+            <a href="#projects" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-projects">Projetos</a>
+            <a href="#youtube" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-youtube">YouTube</a>
+            <a href="#education" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-education">Educação</a>
+            <a href="#contact" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-contact">Contato</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 space-y-24">
+        <!-- Seção Hero -->
+        <section id="hero" class="bg-gray-100 rounded-2xl shadow-xl p-12 text-center">
+            <div class="flex flex-col items-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">Gabriel Govoni</h1>
+                <p class="mt-4 text-xl sm:text-2xl font-light text-gray-700" id="hero-subtitle">Analista de Dados & BI | Especialista em Produtos</p>
+                <p class="mt-6 max-w-2xl text-lg text-gray-600" id="hero-text">
+                    Com experiência em análise de dados, BI e produtos, utilizo insights para resolver problemas de negócios. Minha trajetória me permitiu desenvolver modelos estatísticos, otimizar processos e criar soluções que geram valor direto para as empresas.
+                </p>
+                <div class="mt-8 flex gap-4 justify-center">
+                    <a href="#projects" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition-colors" id="hero-cta-projects">Ver Projetos</a>
+                    <a href="#contact" class="bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-full hover:bg-gray-300 transition-colors" id="hero-cta-contact">Conecte-se</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="about" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <h2 class="section-header" id="about-header">Sobre Mim</h2>
+            <div class="space-y-6 text-gray-700">
+                <p id="about-p1">
+                    Minha jornada profissional começou com uma base sólida em TI e Estatística, que me proporcionou uma visão analítica e orientada a dados. Ao longo da minha carreira, evoluí para a análise de dados, onde pude aplicar meu conhecimento para gerar valor em empresas de destaque como <b>iFood</b>, <b>Stone</b>, <b>Enjoei</b> e <b>Grupo Boticário</b>.
+                </p>
+                <p id="about-p2">
+                    Com expertise em diversas ferramentas e linguagens, sou capaz de transformar dados brutos em insights acionáveis, impulsionando a tomada de decisão e a inovação. Minhas habilidades abrangem desde a criação de modelos estatísticos complexos até a otimização de dashboards e processos.
+                </p>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-4" id="skills-header">Habilidades Técnicas</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-gray-600">
+                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <span class="font-bold" id="skills-languages-label">Linguagens:</span> <span id="skills-languages-text">SQL, Python (sklearn, pandas, numpy), PySpark, R</span>
+                    </li>
+                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <span class="font-bold" id="skills-bi-label">BI & Visualização:</span> <span id="skills-bi-text">Tableau, Looker/Data Studio</span>
+                    </li>
+                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <span class="font-bold" id="skills-platforms-label">Plataformas de Dados:</span> <span id="skills-platforms-text">Google GCP, Vertex AI, BigQuery, MySQL, Airflow</span>
+                    </li>
+                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <span class="font-bold" id="skills-tools-label">Outras Ferramentas:</span> <span id="skills-tools-text">Jira, Git, Excel</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção Experiência -->
+        <section id="experience" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <h2 class="section-header" id="experience-header">Experiência</h2>
+            <div class="space-y-12">
+                <!-- Grupo Boticário -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold text-blue-600" id="boticario-title">Sr. Data Analyst</h3>
+                    <p class="text-lg font-semibold text-gray-700 mt-1" id="boticario-company">Grupo Boticário, 11/08/2025 - Presente</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                        <li id="boticario-role">Atualmente, responsável por liderar e executar análises de dados estratégicas para otimização de processos e tomada de decisões no Grupo Boticário.</li>
+                    </ul>
+                </div>
+                <!-- Enjoei -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold text-blue-600" id="enjoei-title">Data Analyst | BI & Products</h3>
+                    <p class="text-lg font-semibold text-gray-700 mt-1" id="enjoei-company">Enjoei, Jul 2024 - Presente</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                        <li id="enjoei-p1">Criação de modelo de clustering estatístico para recomendação de preço, usando SQL e Python com API no Google GCP + Vertex AI.</li>
+                        <li id="enjoei-p2">Análise de interações de usuários e métricas do funil de vendas, trazendo insights para a equipe de TI.</li>
+                        <li id="enjoei-p3">Implementação de sistemas de home personalizados para engajamento e satisfação do usuário.</li>
+                        <li id="enjoei-p4">Apoio na implementação de um sistema de cashback, otimizando queries SQL e criando dashboards no Tableau, resultando em mais de <b>R$ 100k em vendas</b> em duas semanas.</li>
+                    </ul>
+                </div>
+                <!-- Stone -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold text-blue-600" id="stone-title">Data Analyst | Risk Banking & Fraud Prevention</h3>
+                    <p class="text-lg font-semibold text-gray-700 mt-1" id="stone-company">Stone, Jul 2023 - Jul 2024</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                        <li id="stone-p1">Extração de insights e mitigação de riscos de fraude usando SQL, BigQuery, Google Colab e Looker/Data Studio.</li>
+                        <li id="stone-p2">Criação de um projeto de Lakehouse, organizando conjuntos de dados.</li>
+                        <li id="stone-p3">Análise de dados para a implementação do sistema de pagamento PIX em lote.</li>
+                    </ul>
+                </div>
+                <!-- iFood -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold text-blue-600" id="ifood-title">Data Analyst</h3>
+                    <p class="text-lg font-semibold text-gray-700 mt-1" id="ifood-company">iFood, Jun 2022 - Jul 2023</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                        <li id="ifood-p1">Expertise em análise de dados usando SQL, MySQL, PySpark e Excel; proficiência em Tableau.</li>
+                        <li id="ifood-p2">Desenvolvimento de um bot para Slack ("Bot José") para monitorar pipelines de dados do Airflow em tempo real.</li>
+                        <li id="ifood-p3">Automação de processos no Tableau que resultou em um aumento de <b>31% na produtividade</b> da equipe.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projects" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <h2 class="section-header" id="projects-header">Projetos</h2>
+            <div class="space-y-12">
+                <!-- Projeto 1: Cashback System -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold text-blue-600" id="project-cashback-title">Implementação de Cashback</h3>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-cashback-problem-label">Problema:</b> <span id="project-cashback-problem-text">Necessidade de um sistema de cashback para impulsionar vendas.</span>
+                    </p>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-cashback-solution-label">Solução:</b> <span id="project-cashback-solution-text">Forneci insights de dados e suporte crucial na otimização de queries SQL e criação de dashboards Tableau.</span>
+                    </p>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-cashback-result-label">Resultado:</b> <span id="project-cashback-result-text">O sistema gerou mais de <b>R$ 100k em vendas</b> em apenas duas semanas.</span>
+                    </p>
+                </div>
+                <!-- Projeto 2: Automation Script -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold text-blue-600" id="project-automation-title">Automação de Relatórios</h3>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-automation-problem-label">Problema:</b> <span id="project-automation-problem-text">Processos manuais diários consumiam tempo da equipe de Planejamento Comercial.</span>
+                    </p>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-automation-solution-label">Solução:</b> <span id="project-automation-solution-text">Desenvolvi uma automação no Tableau que reduziu a necessidade de trabalho manual.</span>
+                    </p>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-automation-result-label">Resultado:</b> <span id="project-automation-result-text">Aumento de <b>31% na produtividade</b>, economizando 2.5 horas de trabalho diário.</span>
+                    </p>
+                </div>
+                <!-- Projeto 3: Partner Revenue Script -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold text-blue-600" id="project-revenue-title">Aumento de Receita</h3>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-revenue-problem-label">Problema:</b> <span id="project-revenue-problem-text">Erros de cadastro afetavam as vendas de um parceiro.</span>
+                    </p>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-revenue-solution-label">Solução:</b> <span id="project-revenue-solution-text">Criei um script para identificar e corrigir os erros, otimizando o catálogo.</span>
+                    </p>
+                    <p class="text-gray-600 mt-2">
+                        <b id="project-revenue-result-label">Resultado:</b> <span id="project-revenue-result-text">Aumento de <b>130 mil reais</b> em receita para o parceiro.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção YouTube -->
+        <section id="youtube" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <h2 class="section-header" id="youtube-header">Canal do YouTube</h2>
+            <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                <h3 class="text-2xl font-bold text-red-600" id="youtube-title">govoni_dados</h3>
+                <p class="text-gray-600 mt-2" id="youtube-text">
+                    Neste canal, compartilho conhecimento e insights sobre análise de dados e carreira em TI.
+                </p>
+                <img src="https://placehold.co/600x150/ef4444/ffffff?text=Canal+no+YouTube" alt="Banner do canal govoni_dados" class="mt-4 rounded-xl shadow-md w-full" id="youtube-image-alt">
+                <a href="https://www.youtube.com/@govoni_dados" target="_blank" class="mt-4 inline-block bg-red-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-red-700 transition-colors" id="youtube-cta">
+                    Visitar o Canal
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção Educação -->
+        <section id="education" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <h2 class="section-header" id="education-header">Educação</h2>
+            <div class="space-y-6 text-gray-700">
+                <ul class="list-disc list-inside space-y-2">
+                    <li id="education-puc">
+                        <b class="font-bold">Especialização em Data Science e Big Data</b> - PUC Minas (2027)
+                    </li>
+                    <li id="education-anhembi">
+                        <b class="font-bold">Bacharelado em Estatística</b> - Universidade Anhembi Morumbi
+                    </li>
+                    <li id="education-unicamp">
+                        <b class="font-bold">Bacharelado em Estatística</b> - Universidade Estadual de Campinas (UNICAMP), 80% completo
+                    </li>
+                    <li id="education-etec">
+                        <b class="font-bold">Técnico em Informática</b> - Escola Técnica de São Paulo (2016-2017)
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contact" class="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
+            <h2 class="section-header" id="contact-header">Contato</h2>
+            <p class="text-lg text-gray-700 mb-6" id="contact-text">Ficarei feliz em conversar sobre novos projetos e oportunidades.</p>
+            <div class="space-y-4 max-w-lg mx-auto">
+                <p class="text-gray-600">
+                    <b id="contact-email-label">E-mail:</b> <a href="mailto:govoni.gabriel@gmail.com" class="text-blue-600 hover:underline">govoni.gabriel@gmail.com</a>
+                </p>
+                <p class="text-gray-600">
+                    <b id="contact-linkedin-label">LinkedIn:</b> <a href="https://www.linkedin.com/in/gabriel-govoni" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/gabriel-govoni</a>
+                </p>
+                <p class="text-gray-600">
+                    <b id="contact-phone-label">Telefone:</b> <span id="contact-phone-number">+55 15 98175-6202</span>
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+        <div class="container mx-auto">
+            <p class="text-sm" id="footer-text">&copy; 2024 Gabriel Govoni. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const content = {
+            pt: {
+                nav: {
+                    about: "Sobre Mim",
+                    experience: "Experiência",
+                    projects: "Projetos",
+                    youtube: "YouTube",
+                    education: "Educação",
+                    contact: "Contato"
+                },
+                hero: {
+                    subtitle: "Analista de Dados & BI | Especialista em Produtos",
+                    text: "Com experiência em análise de dados, BI e produtos, utilizo insights para resolver problemas de negócios. Minha trajetória me permitiu desenvolver modelos estatísticos, otimizar processos e criar soluções que geram valor direto para as empresas.",
+                    ctaProjects: "Ver Projetos",
+                    ctaContact: "Conecte-se"
+                },
+                about: {
+                    header: "Sobre Mim",
+                    p1: "Minha jornada profissional começou com uma base sólida em TI e Estatística, que me proporcionou uma visão analítica e orientada a dados. Ao longo da minha carreira, evoluí para a análise de dados, onde pude aplicar meu conhecimento para gerar valor em empresas de destaque como <b>iFood</b>, <b>Stone</b>, <b>Enjoei</b> e <b>Grupo Boticário</b>.",
+                    p2: "Com expertise em diversas ferramentas e linguagens, sou capaz de transformar dados brutos em insights acionáveis, impulsionando a tomada de decisão e a inovação. Minhas habilidades abrangem desde a criação de modelos estatísticos complexos até a otimização de dashboards e processos."
+                },
+                skills: {
+                    header: "Habilidades Técnicas",
+                    languagesLabel: "Linguagens:",
+                    languagesText: "SQL, Python (sklearn, pandas, numpy), PySpark, R",
+                    biLabel: "BI & Visualização:",
+                    biText: "Tableau, Looker/Data Studio",
+                    platformsLabel: "Plataformas de Dados:",
+                    platformsText: "Google GCP, Vertex AI, BigQuery, MySQL, Airflow",
+                    toolsLabel: "Outras Ferramentas:",
+                    toolsText: "Jira, Git, Excel"
+                },
+                experience: {
+                    header: "Experiência",
+                    boticario: {
+                        title: "Sr. Data Analyst",
+                        company: "Grupo Boticário, 11/08/2025 - Presente",
+                        role: "Atualmente, responsável por liderar e executar análises de dados estratégicas para otimização de processos e tomada de decisões no Grupo Boticário."
+                    },
+                    enjoei: {
+                        title: "Data Analyst | BI & Products",
+                        company: "Enjoei, Jul 2024 - Presente",
+                        p1: "Criação de modelo de clustering estatístico para recomendação de preço, usando SQL e Python com API no Google GCP + Vertex AI.",
+                        p2: "Análise de interações de usuários e métricas do funil de vendas, trazendo insights para a equipe de TI.",
+                        p3: "Implementação de sistemas de home personalizados para engajamento e satisfação do usuário.",
+                        p4: "Apoio na implementação de um sistema de cashback, otimizando queries SQL e criando dashboards no Tableau, resultando em mais de <b>R$ 100k em vendas</b> em duas semanas."
+                    },
+                    stone: {
+                        title: "Data Analyst | Risk Banking & Fraud Prevention",
+                        company: "Stone, Jul 2023 - Jul 2024",
+                        p1: "Extração de insights e mitigação de riscos de fraude usando SQL, BigQuery, Google Colab e Looker/Data Studio.",
+                        p2: "Criação de um projeto de Lakehouse, organizando conjuntos de dados.",
+                        p3: "Análise de dados para a implementação do sistema de pagamento PIX em lote."
+                    },
+                    ifood: {
+                        title: "Data Analyst",
+                        company: "iFood, Jun 2022 - Jul 2023",
+                        p1: "Expertise em análise de dados usando SQL, MySQL, PySpark e Excel; proficiência em Tableau.",
+                        p2: "Desenvolvimento de um bot para Slack ('Bot José') para monitorar pipelines de dados do Airflow em tempo real.",
+                        p3: "Automação de processos no Tableau que resultou em um aumento de <b>31% na produtividade</b> da equipe."
+                    }
+                },
+                projects: {
+                    header: "Projetos",
+                    cashback: {
+                        title: "Implementação de Cashback",
+                        problemLabel: "Problema:",
+                        problemText: "Necessidade de um sistema de cashback para impulsionar vendas.",
+                        solutionLabel: "Solução:",
+                        solutionText: "Forneci insights de dados e suporte crucial na otimização de queries SQL e criação de dashboards Tableau.",
+                        resultLabel: "Resultado:",
+                        resultText: "O sistema gerou mais de <b>R$ 100k em vendas</b> em apenas duas semanas."
+                    },
+                    automation: {
+                        title: "Automação de Relatórios",
+                        problemLabel: "Problema:",
+                        problemText: "Processos manuais diários consumiam tempo da equipe de Planejamento Comercial.",
+                        solutionLabel: "Solução:",
+                        solutionText: "Desenvolvi uma automação no Tableau que reduziu a necessidade de trabalho manual.",
+                        resultLabel: "Resultado:",
+                        resultText: "Aumento de <b>31% na produtividade</b>, economizando 2.5 horas de trabalho diário."
+                    },
+                    revenue: {
+                        title: "Aumento de Receita",
+                        problemLabel: "Problema:",
+                        problemText: "Erros de cadastro afetavam as vendas de um parceiro.",
+                        solutionLabel: "Solução:",
+                        solutionText: "Criei um script para identificar e corrigir os erros, otimizando o catálogo.",
+                        resultLabel: "Resultado:",
+                        resultText: "Aumento de <b>130 mil reais</b> em receita para o parceiro."
+                    }
+                },
+                youtube: {
+                    header: "Canal do YouTube",
+                    title: "govoni_dados",
+                    text: "Neste canal, compartilho conhecimento e insights sobre análise de dados e carreira em TI.",
+                    imageAlt: "Banner do canal govoni_dados",
+                    cta: "Visitar o Canal"
+                },
+                education: {
+                    header: "Educação",
+                    puc: "<b>Especialização em Data Science e Big Data</b> - PUC Minas (2027)",
+                    anhembi: "<b>Bacharelado em Estatística</b> - Universidade Anhembi Morumbi",
+                    unicamp: "<b>Bacharelado em Estatística</b> - Universidade Estadual de Campinas (UNICAMP), 80% completo",
+                    etec: "<b>Técnico em Informática</b> - Escola Técnica de São Paulo (2016-2017)"
+                },
+                contact: {
+                    header: "Contato",
+                    text: "Ficarei feliz em conversar sobre novos projetos e oportunidades.",
+                    emailLabel: "E-mail:",
+                    linkedinLabel: "LinkedIn:",
+                    phoneLabel: "Telefone:",
+                    phoneNumber: "+55 15 98175-6202"
+                },
+                footer: {
+                    text: "&copy; 2024 Gabriel Govoni. Todos os direitos reservados."
+                }
+            },
+            en: {
+                nav: {
+                    about: "About Me",
+                    experience: "Experience",
+                    projects: "Projects",
+                    youtube: "YouTube",
+                    education: "Education",
+                    contact: "Contact"
+                },
+                hero: {
+                    subtitle: "Data & BI Analyst | Product Specialist",
+                    text: "With experience in data analysis, BI, and products, I use insights to solve business problems. My journey has allowed me to develop statistical models, optimize processes, and create solutions that generate direct value for companies.",
+                    ctaProjects: "View Projects",
+                    ctaContact: "Connect"
+                },
+                about: {
+                    header: "About Me",
+                    p1: "My professional journey began with a solid foundation in IT and Statistics, which gave me an analytical and data-driven perspective. Throughout my career, I evolved into data analysis, where I was able to apply my knowledge to generate value in prominent companies such as <b>iFood</b>, <b>Stone</b>, <b>Enjoei</b>, and <b>Grupo Boticário</b>.",
+                    p2: "With expertise in various tools and languages, I am capable of transforming raw data into actionable insights, driving decision-making and innovation. My skills range from creating complex statistical models to optimizing dashboards and processes."
+                },
+                skills: {
+                    header: "Technical Skills",
+                    languagesLabel: "Languages:",
+                    languagesText: "SQL, Python (sklearn, pandas, numpy), PySpark, R",
+                    biLabel: "BI & Visualization:",
+                    biText: "Tableau, Looker/Data Studio",
+                    platformsLabel: "Data Platforms:",
+                    platformsText: "Google GCP, Vertex AI, BigQuery, MySQL, Airflow",
+                    toolsLabel: "Other Tools:",
+                    toolsText: "Jira, Git, Excel"
+                },
+                experience: {
+                    header: "Experience",
+                    boticario: {
+                        title: "Sr. Data Analyst",
+                        company: "Grupo Boticário, 08/11/2025 - Present",
+                        role: "Currently responsible for leading and executing strategic data analyses to optimize processes and support decision-making at Grupo Boticário."
+                    },
+                    enjoei: {
+                        title: "Data Analyst | BI & Products",
+                        company: "Enjoei, Jul 2024 - Present",
+                        p1: "Creation of a statistical clustering model for price recommendation, using SQL and Python with API on Google GCP + Vertex AI.",
+                        p2: "Analysis of user interactions and sales funnel metrics, bringing insights to the IT team to change the way data is recorded, identifying trends and opportunities to improve the sales.",
+                        p3: "Implementation of personalized home systems to boost user engagement and satisfaction.",
+                        p4: "Support in the implementation of a cashback system, optimizing SQL queries and creating Tableau dashboards, resulting in more than <b>R$ 100k in sales</b> within two weeks."
+                    },
+                    stone: {
+                        title: "Data Analyst | Risk Banking & Fraud Prevention",
+                        company: "Stone, Jul 2023 - Jul 2024",
+                        p1: "Extraction of insights and mitigation of fraud risks using SQL, BigQuery, Google Colab and Looker/Data Studio.",
+                        p2: "Creation of a Lakehouse project, organizing data sets.",
+                        p3: "Data analysis for the implementation of the batch PIX payment system."
+                    },
+                    ifood: {
+                        title: "Data Analyst",
+                        company: "iFood, Jun 2022 - Jul 2023",
+                        p1: "Expertise in data analysis using SQL, MySQL, PySpark, and Excel; proficiency in Tableau.",
+                        p2: "Development of a Slack bot ('Bot José') to monitor Airflow data pipelines in real-time.",
+                        p3: "Automation of processes in Tableau that resulted in a <b>31% increase in team productivity</b>."
+                    }
+                },
+                projects: {
+                    header: "Projects",
+                    cashback: {
+                        title: "Cashback System Implementation",
+                        problemLabel: "Problem:",
+                        problemText: "Need for a cashback system to boost sales.",
+                        solutionLabel: "Solution:",
+                        solutionText: "Provided crucial data insights and support in optimizing SQL queries and creating Tableau dashboards.",
+                        resultLabel: "Result:",
+                        resultText: "The system generated over <b>R$ 100k in sales</b> in just two weeks."
+                    },
+                    automation: {
+                        title: "Report Automation",
+                        problemLabel: "Problem:",
+                        problemText: "Daily manual processes consumed time from the Commercial Planning team.",
+                        solutionLabel: "Solução:",
+                        solutionText: "Developed an automation in Tableau that reduced the need for manual work.",
+                        resultLabel: "Result:",
+                        resultText: "A <b>31% increase in productivity</b>, saving 2.5 hours of daily work."
+                    },
+                    revenue: {
+                        title: "Revenue Increase",
+                        problemLabel: "Problem:",
+                        problemText: "Registration errors affected a partner's sales.",
+                        solutionLabel: "Solution:",
+                        solutionText: "Created a script to identify and correct the errors, optimizing the catalog.",
+                        resultLabel: "Result:",
+                        resultText: "A <b>130 thousand reais</b> increase in revenue for the partner."
+                    }
+                },
+                youtube: {
+                    header: "YouTube Channel",
+                    title: "govoni_dados",
+                    text: "On this channel, I share knowledge and insights about data analysis and a career in IT.",
+                    imageAlt: "Banner of the govoni_dados channel",
+                    cta: "Visit the Channel"
+                },
+                education: {
+                    header: "Education",
+                    puc: "<b>Specialization in Data Science and Big Data</b> - PUC Minas (2027)",
+                    anhembi: "<b>Bachelor of Statistics</b> - Universidade Anhembi Morumbi",
+                    unicamp: "<b>Bachelor of Statistics</b> - State University of Campinas (UNICAMP), 80% complete",
+                    etec: "<b>Technical Degree in IT</b> - Technical School of São Paulo (2016-2017)"
+                },
+                contact: {
+                    header: "Contact",
+                    text: "I would be happy to discuss new projects and opportunities.",
+                    emailLabel: "Email:",
+                    linkedinLabel: "LinkedIn:",
+                    phoneLabel: "Phone:",
+                    phoneNumber: "+55 15 98175-6202"
+                },
+                footer: {
+                    text: "&copy; 2024 Gabriel Govoni. All rights reserved."
+                }
+            }
+        };
+
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language switch logic
+        const langPtBtn = document.getElementById('lang-pt');
+        const langEnBtn = document.getElementById('lang-en');
+
+        const elements = {
+            'nav-about': 'nav.about', 'nav-experience': 'nav.experience', 'nav-projects': 'nav.projects', 'nav-youtube': 'nav.youtube', 'nav-education': 'nav.education', 'nav-contact': 'nav.contact',
+            'mobile-nav-about': 'nav.about', 'mobile-nav-experience': 'nav.experience', 'mobile-nav-projects': 'nav.projects', 'mobile-nav-youtube': 'nav.youtube', 'mobile-nav-education': 'nav.education', 'mobile-nav-contact': 'nav.contact',
+            'hero-subtitle': 'hero.subtitle', 'hero-text': 'hero.text', 'hero-cta-projects': 'hero.ctaProjects', 'hero-cta-contact': 'hero.ctaContact',
+            'about-header': 'about.header', 'about-p1': 'about.p1', 'about-p2': 'about.p2',
+            'skills-header': 'skills.header', 'skills-languages-label': 'skills.languagesLabel', 'skills-languages-text': 'skills.languagesText',
+            'skills-bi-label': 'skills.biLabel', 'skills-bi-text': 'skills.biText',
+            'skills-platforms-label': 'skills.platformsLabel', 'skills-platforms-text': 'skills.platformsText',
+            'skills-tools-label': 'skills.toolsLabel', 'skills-tools-text': 'skills.toolsText',
+            'experience-header': 'experience.header',
+            'boticario-title': 'experience.boticario.title', 'boticario-company': 'experience.boticario.company', 'boticario-role': 'experience.boticario.role',
+            'enjoei-title': 'experience.enjoei.title', 'enjoei-company': 'experience.enjoei.company', 'enjoei-p1': 'experience.enjoei.p1', 'enjoei-p2': 'experience.enjoei.p2', 'enjoei-p3': 'experience.enjoei.p3', 'enjoei-p4': 'experience.enjoei.p4',
+            'stone-title': 'experience.stone.title', 'stone-company': 'experience.stone.company', 'stone-p1': 'experience.stone.p1', 'stone-p2': 'experience.stone.p2', 'stone-p3': 'experience.stone.p3',
+            'ifood-title': 'experience.ifood.title', 'ifood-company': 'experience.ifood.company', 'ifood-p1': 'experience.ifood.p1', 'ifood-p2': 'experience.ifood.p2', 'ifood-p3': 'experience.ifood.p3',
+            'projects-header': 'projects.header',
+            'project-cashback-title': 'projects.cashback.title', 'project-cashback-problem-label': 'projects.cashback.problemLabel', 'project-cashback-problem-text': 'projects.cashback.problemText', 'project-cashback-solution-label': 'projects.cashback.solutionLabel', 'project-cashback-solution-text': 'projects.cashback.solutionText', 'project-cashback-result-label': 'projects.cashback.resultLabel', 'project-cashback-result-text': 'projects.cashback.resultText',
+            'project-automation-title': 'projects.automation.title', 'project-automation-problem-label': 'projects.automation.problemLabel', 'project-automation-problem-text': 'projects.automation.problemText', 'project-automation-solution-label': 'projects.automation.solutionLabel', 'project-automation-solution-text': 'projects.automation.solutionText', 'project-automation-result-label': 'projects.automation.resultLabel', 'project-automation-result-text': 'projects.automation.resultText',
+            'project-revenue-title': 'projects.revenue.title', 'project-revenue-problem-label': 'projects.revenue.problemLabel', 'project-revenue-problem-text': 'projects.revenue.problemText', 'project-revenue-solution-label': 'projects.revenue.solutionLabel', 'project-revenue-solution-text': 'projects.revenue.solutionText', 'project-revenue-result-label': 'projects.revenue.resultLabel', 'project-revenue-result-text': 'projects.revenue.resultText',
+            'youtube-header': 'youtube.header', 'youtube-title': 'youtube.title', 'youtube-text': 'youtube.text', 'youtube-image-alt': 'youtube.imageAlt', 'youtube-cta': 'youtube.cta',
+            'education-header': 'education.header', 'education-puc': 'education.puc', 'education-anhembi': 'education.anhembi', 'education-unicamp': 'education.unicamp', 'education-etec': 'education.etec',
+            'contact-header': 'contact.header', 'contact-text': 'contact.text', 'contact-email-label': 'contact.emailLabel', 'contact-linkedin-label': 'contact.linkedinLabel', 'contact-phone-label': 'contact.phoneLabel', 'contact-phone-number': 'contact.phoneNumber',
+            'footer-text': 'footer.text',
+        };
+
+        function getNestedObject(obj, path) {
+            return path.split('.').reduce((o, p) => (o ? o[p] : undefined), obj);
+        }
+
+        function updateContent(lang) {
+            document.documentElement.lang = lang;
+            const langContent = content[lang];
+            for (const id in elements) {
+                const element = document.getElementById(id);
+                if (element) {
+                    const textPath = elements[id];
+                    const text = getNestedObject(langContent, textPath);
+                    if (text !== undefined) {
+                        element.innerHTML = text;
+                    }
+                }
+            }
+        }
+
+        langPtBtn.addEventListener('click', () => {
+            updateContent('pt');
+            localStorage.setItem('lang', 'pt');
+        });
+
+        langEnBtn.addEventListener('click', () => {
+            updateContent('en');
+            localStorage.setItem('lang', 'en');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedLang = localStorage.getItem('lang') || 'pt';
+            updateContent(storedLang);
+        });
+    </script>
+</body>
+</html>
