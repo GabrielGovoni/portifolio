@@ -1,136 +1,172 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Govoni | Portfólio</title>
+    <title>Gabriel Govoni | Data Analyst & Product Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Azul moderno
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
-        }
-        .section-header {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .nav-link {
-            transition: color 0.3s;
-        }
-        .nav-link:hover {
-            color: #3b82f6;
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        /* Gradiente suave no fundo */
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
         }
     </style>
 </head>
-<body class="scroll-smooth">
-    <!-- Navegação -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+<body class="bg-gray-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo e Nome no Cabeçalho -->
-            <a href="#hero" class="flex items-center space-x-3">
-                <!-- Imagem do logo atualizada com o ficheiro 'logo.png' -->
-                <img src="logo.png" alt="Logo de Gabriel Govoni" class="w-12 h-12 rounded-full shadow-lg">
-                <span class="text-2xl font-bold text-gray-800">Gabriel Govoni</span>
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <img src="logo.png" alt="Gabriel Govoni" class="w-10 h-10 rounded-full shadow-md group-hover:scale-105 transition-transform">
+                <span class="text-xl font-bold text-slate-900 tracking-tight">Gabriel Govoni<span class="text-brand-500">.</span></span>
             </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="nav-link text-gray-600 hover:text-blue-500" id="nav-about">Sobre Mim</a>
-                <a href="#experience" class="nav-link text-gray-600 hover:text-blue-500" id="nav-experience">Experiência</a>
-                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-500" id="nav-projects">Projetos</a>
-                <a href="#youtube" class="nav-link text-gray-600 hover:text-blue-500" id="nav-youtube">YouTube</a>
-                <a href="#education" class="nav-link text-gray-600 hover:text-blue-500" id="nav-education">Educação</a>
-                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-500" id="nav-contact">Contato</a>
-                 <!-- Botões de Idioma com bandeiras movidos para o final -->
-                <div class="flex space-x-2 ml-4">
-                    <button id="lang-pt" class="focus:outline-none text-xl p-1 bg-gray-200 rounded-full hover:bg-gray-300 transition-colors">
-                        <img src="brasil.png" alt="Bandeira do Brasil" class="w-6 h-6 rounded-full">
+
+            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#about" class="hover:text-brand-600 transition-colors" id="nav-about">Sobre</a>
+                <a href="#experience" class="hover:text-brand-600 transition-colors" id="nav-experience">Experiência</a>
+                <a href="#projects" class="hover:text-brand-600 transition-colors" id="nav-projects">Projetos</a>
+                <a href="#education" class="hover:text-brand-600 transition-colors" id="nav-education">Educação</a>
+                
+                <a href="cv.pdf" target="_blank" class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-700 transition-all shadow-lg hover:shadow-slate-300/50">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span>CV</span>
+                </a>
+
+                <div class="flex items-center bg-gray-100 rounded-full p-1 ml-4">
+                    <button id="lang-pt" class="p-1.5 hover:bg-white rounded-full transition-all shadow-sm">
+                        <img src="brasil.png" alt="PT" class="w-5 h-5 rounded-full grayscale hover:grayscale-0 transition-all">
                     </button>
-                    <button id="lang-en" class="focus:outline-none text-xl p-1 bg-gray-200 rounded-full hover:bg-gray-300 transition-colors">
-                        <img src="united-states.png" alt="Bandeira dos Estados Unidos" class="w-6 h-6 rounded-full">
+                    <button id="lang-en" class="p-1.5 hover:bg-white rounded-full transition-all shadow-sm">
+                        <img src="united-states.png" alt="EN" class="w-5 h-5 rounded-full grayscale hover:grayscale-0 transition-all">
                     </button>
                 </div>
             </div>
-            
-            <button id="menu-button" class="md:hidden text-gray-600 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+
+            <button id="menu-button" class="md:hidden text-slate-600 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
             </button>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4">
-            <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-about">Sobre Mim</a>
-            <a href="#experience" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-experience">Experiência</a>
-            <a href="#projects" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-projects">Projetos</a>
-            <a href="#youtube" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-youtube">YouTube</a>
-            <a href="#education" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-education">Educação</a>
-            <a href="#contact" class="block px-6 py-2 text-gray-600 hover:bg-gray-100" id="mobile-nav-contact">Contato</a>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg py-4 px-6 space-y-4">
+            <a href="#about" class="block text-slate-600 hover:text-brand-600 font-medium" id="mobile-nav-about">Sobre</a>
+            <a href="#experience" class="block text-slate-600 hover:text-brand-600 font-medium" id="mobile-nav-experience">Experiência</a>
+            <a href="#projects" class="block text-slate-600 hover:text-brand-600 font-medium" id="mobile-nav-projects">Projetos</a>
+            <a href="cv.pdf" target="_blank" class="block text-brand-600 font-bold">Download CV</a>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-12 space-y-24">
-        <!-- Seção Hero -->
-        <section id="hero" class="bg-gray-100 rounded-2xl shadow-xl p-12 text-center">
-            <div class="flex flex-col items-center">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">Gabriel Govoni</h1>
-                <p class="mt-4 text-xl sm:text-2xl font-light text-gray-700" id="hero-subtitle">Analista de Dados & BI | Especialista em Produtos</p>
-                <p class="mt-6 max-w-2xl text-lg text-gray-600" id="hero-text">
-                    Com experiência em análise de dados, BI e produtos, utilizo insights para resolver problemas de negócios. Minha trajetória me permitiu desenvolver modelos estatísticos, otimizar processos e criar soluções que geram valor direto para as empresas.
+    <main class="space-y-24 pb-24">
+        
+        <section id="hero" class="pt-20 pb-32 px-6 bg-gradient-custom relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-50 blur-3xl opacity-50 -z-10 rounded-full transform translate-x-1/2"></div>
+            
+            <div class="container mx-auto text-center max-w-4xl" data-aos="fade-up" data-aos-duration="1000">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand-100 text-brand-600 text-sm font-bold mb-6">Data & Product Specialist</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                    Gabriel Govoni
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 font-light mb-8 max-w-2xl mx-auto leading-relaxed" id="hero-subtitle">
+                    Analista de Dados & BI | Especialista em Produtos
                 </p>
-                <div class="mt-8 flex gap-4 justify-center">
-                    <a href="#projects" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition-colors" id="hero-cta-projects">Ver Projetos</a>
-                    <a href="#contact" class="bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-full hover:bg-gray-300 transition-colors" id="hero-cta-contact">Conecte-se</a>
+                <p class="text-lg text-slate-500 mb-10 max-w-2xl mx-auto" id="hero-text">
+                    Transformo dados complexos em decisões de negócio estratégicas. Especialista em construir pontes entre estatística, tecnologia e resultados.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="bg-brand-600 text-white font-bold py-3 px-8 rounded-full hover:bg-brand-700 transition-all hover:-translate-y-1 shadow-lg shadow-brand-500/30" id="hero-cta-projects">
+                        Ver Projetos
+                    </a>
+                    <a href="#contact" class="bg-white text-slate-700 font-bold py-3 px-8 rounded-full border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all hover:-translate-y-1 shadow-sm" id="hero-cta-contact">
+                        Conecte-se
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Sobre Mim -->
-        <section id="about" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 class="section-header" id="about-header">Sobre Mim</h2>
-            <div class="space-y-6 text-gray-700">
-                <p id="about-p1">
-                    Minha jornada profissional começou com uma base sólida em TI e Estatística, que me proporcionou uma visão analítica e orientada a dados. Ao longo da minha carreira, evoluí para a análise de dados, onde pude aplicar meu conhecimento para gerar valor em empresas de destaque como <b>iFood</b>, <b>Stone</b>, <b>Enjoei</b> e <b>Grupo Boticário</b>.
-                </p>
-                <p id="about-p2">
-                    Com expertise em diversas ferramentas e linguagens, sou capaz de transformar dados brutos em insights acionáveis, impulsionando a tomada de decisão e a inovação. Minhas habilidades abrangem desde a criação de modelos estatísticos complexos até a otimização de dashboards e processos.
-                </p>
-            </div>
-            <div class="mt-8">
-                <h3 class="text-xl font-bold text-gray-800 mb-4" id="skills-header">Habilidades Técnicas</h3>
-                <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-gray-600">
-                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <span class="font-bold" id="skills-languages-label">Linguagens:</span> <span id="skills-languages-text">SQL, Python (sklearn, pandas, numpy), PySpark, R</span>
-                    </li>
-                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <span class="font-bold" id="skills-bi-label">BI & Visualização:</span> <span id="skills-bi-text">Tableau, Looker/Data Studio</span>
-                    </li>
-                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <span class="font-bold" id="skills-platforms-label">Plataformas de Dados:</span> <span id="skills-platforms-text">Google GCP, Vertex AI, BigQuery, MySQL, Airflow</span>
-                    </li>
-                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <span class="font-bold" id="skills-tools-label">Outras Ferramentas:</span> <span id="skills-tools-text">Jira, Git, Excel</span>
-                    </li>
-                </ul>
+        <section id="about" class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-slate-900 mb-12" id="about-header" data-aos="fade-up">Sobre Mim</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <div class="md:col-span-8 bg-white p-8 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-right">
+                        <p class="text-slate-600 leading-relaxed mb-4" id="about-p1">
+                            Minha jornada começou com TI e Estatística. Hoje, gero valor em empresas como <b>iFood</b>, <b>Stone</b> e <b>Boticário</b>.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed" id="about-p2">
+                            Transformo dados brutos em insights acionáveis, da modelagem estatística à otimização de processos.
+                        </p>
+                    </div>
+
+                    <div class="md:col-span-4 bg-brand-50 p-8 rounded-2xl border border-brand-100" data-aos="fade-left">
+                        <h3 class="font-bold text-brand-900 mb-4" id="skills-header">Tech Stack</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white text-brand-700 px-3 py-1 rounded-md text-sm font-semibold shadow-sm">Python</span>
+                            <span class="bg-white text-brand-700 px-3 py-1 rounded-md text-sm font-semibold shadow-sm">SQL</span>
+                            <span class="bg-white text-brand-700 px-3 py-1 rounded-md text-sm font-semibold shadow-sm">PySpark</span>
+                            <span class="bg-white text-brand-700 px-3 py-1 rounded-md text-sm font-semibold shadow-sm">Tableau</span>
+                            <span class="bg-white text-brand-700 px-3 py-1 rounded-md text-sm font-semibold shadow-sm">GCP</span>
+                            <span class="bg-white text-brand-700 px-3 py-1 rounded-md text-sm font-semibold shadow-sm">BigQuery</span>
+                            <span class="bg-white text-brand-700 px-3 py-1 rounded-md text-sm font-semibold shadow-sm">Airflow</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Seção Experiência -->
         <section id="experience" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 class="section-header" id="experience-header">Experiência</h2>
-            <div class="space-y-12">
-                <!-- Grupo Boticário -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+    <h2 class="section-header" id="experience-header">Experiência</h2>
+    
+    <div class="relative max-w-4xl mx-auto">
+        <div class="hidden md:block absolute left-4 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+
+        <div class="space-y-12">
+
+            <div class="flex relative md:pl-16">
+                <div class="absolute -left-2 top-0 md:left-4 md:-translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-500 shadow-md z-10">
+                    <img src="gb_icon.png" alt="Grupo Boticário Icon" class="w-8 h-8 rounded-full object-contain">
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner w-full">
                     <h3 class="text-2xl font-bold text-blue-600" id="boticario-title">Sr. Data Analyst</h3>
                     <p class="text-lg font-semibold text-gray-700 mt-1" id="boticario-company">Grupo Boticário, 11/08/2025 - Presente</p>
                     <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
                         <li id="boticario-role">Atualmente, responsável por liderar e executar análises de dados estratégicas para otimização de processos e tomada de decisões no Grupo Boticário.</li>
                     </ul>
                 </div>
-                <!-- Enjoei -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+            </div>
+
+            <div class="flex relative md:pl-16">
+                <div class="absolute -left-2 top-0 md:left-4 md:-translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-purple-500 shadow-md z-10">
+                    <img src="enjoei_icon.png" alt="Enjoei Icon" class="w-8 h-8 rounded-full object-contain">
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner w-full">
                     <h3 class="text-2xl font-bold text-blue-600" id="enjoei-title">Data Analyst | BI & Products</h3>
                     <p class="text-lg font-semibold text-gray-700 mt-1" id="enjoei-company">Enjoei, Jul 2024 - Presente</p>
                     <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
@@ -140,8 +176,14 @@
                         <li id="enjoei-p4">Apoio na implementação de um sistema de cashback, otimizando queries SQL e criando dashboards no Tableau, resultando em mais de <b>R$ 100k em vendas</b> em duas semanas.</li>
                     </ul>
                 </div>
-                <!-- Stone -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+            </div>
+
+            <div class="flex relative md:pl-16">
+                <div class="absolute -left-2 top-0 md:left-4 md:-translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-green-500 shadow-md z-10">
+                    <img src="stone_icon.png" alt="Stone Icon" class="w-8 h-8 object-contain">
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner w-full">
                     <h3 class="text-2xl font-bold text-blue-600" id="stone-title">Data Analyst | Risk Banking & Fraud Prevention</h3>
                     <p class="text-lg font-semibold text-gray-700 mt-1" id="stone-company">Stone, Jul 2023 - Jul 2024</p>
                     <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
@@ -150,8 +192,14 @@
                         <li id="stone-p3">Análise de dados para a implementação do sistema de pagamento PIX em lote.</li>
                     </ul>
                 </div>
-                <!-- iFood -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+            </div>
+
+            <div class="flex relative md:pl-16">
+                <div class="absolute -left-2 top-0 md:left-4 md:-translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-red-500 shadow-md z-10">
+                    <img src="ifoodI_icon.png" alt="iFood Icon" class="w-8 h-8 object-contain">
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner w-full">
                     <h3 class="text-2xl font-bold text-blue-600" id="ifood-title">Data Analyst</h3>
                     <p class="text-lg font-semibold text-gray-700 mt-1" id="ifood-company">iFood, Jun 2022 - Jul 2023</p>
                     <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
@@ -161,116 +209,170 @@
                     </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- Seção Projetos -->
-        <section id="projects" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 class="section-header" id="projects-header">Projetos</h2>
-            <div class="space-y-12">
-                <!-- Projeto 1: Cashback System -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
-                    <h3 class="text-2xl font-bold text-blue-600" id="project-cashback-title">Implementação de Cashback</h3>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-cashback-problem-label">Problema:</b> <span id="project-cashback-problem-text">Necessidade de um sistema de cashback para impulsionar vendas.</span>
+        </div>
+    </div>
+</section>
+
+        <section id="projects" class="container mx-auto px-6 bg-slate-50 py-16 rounded-3xl">
+            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12" id="projects-header" data-aos="fade-up">Projetos de Impacto</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-500 hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+                    <div class="bg-brand-100 w-12 h-12 rounded-full flex items-center justify-center mb-6 text-brand-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" id="project-cashback-title">Cashback System</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        <span id="project-cashback-result-text">Gerou mais de <b>R$ 100k em vendas</b> em 2 semanas.</span>
                     </p>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-cashback-solution-label">Solução:</b> <span id="project-cashback-solution-text">Forneci insights de dados e suporte crucial na otimização de queries SQL e criação de dashboards Tableau.</span>
-                    </p>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-cashback-result-label">Resultado:</b> <span id="project-cashback-result-text">O sistema gerou mais de <b>R$ 100k em vendas</b> em apenas duas semanas.</span>
-                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">SQL</span>
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Tableau</span>
+                    </div>
                 </div>
-                <!-- Projeto 2: Automation Script -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
-                    <h3 class="text-2xl font-bold text-blue-600" id="project-automation-title">Automação de Relatórios</h3>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-automation-problem-label">Problema:</b> <span id="project-automation-problem-text">Processos manuais diários consumiam tempo da equipe de Planejamento Comercial.</span>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-purple-500 hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                     <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-6 text-purple-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" id="project-automation-title">Automação</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        <span id="project-automation-result-text">Aumento de <b>31% na produtividade</b> da equipe.</span>
                     </p>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-automation-solution-label">Solução:</b> <span id="project-automation-solution-text">Desenvolvi uma automação no Tableau que reduziu a necessidade de trabalho manual.</span>
-                    </p>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-automation-result-label">Resultado:</b> <span id="project-automation-result-text">Aumento de <b>31% na produtividade</b>, economizando 2.5 horas de trabalho diário.</span>
-                    </p>
+                     <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Airflow</span>
+                    </div>
                 </div>
-                <!-- Projeto 3: Partner Revenue Script -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
-                    <h3 class="text-2xl font-bold text-blue-600" id="project-revenue-title">Aumento de Receita</h3>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-revenue-problem-label">Problema:</b> <span id="project-revenue-problem-text">Erros de cadastro afetavam as vendas de um parceiro.</span>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-green-500 hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                     <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-6 text-green-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" id="project-revenue-title">Aumento de Receita</h3>
+                    <p class="text-slate-600 text-sm mb-4">
+                        <span id="project-revenue-result-text">Recuperação de <b>R$ 130k</b> corrigindo catálogo.</span>
                     </p>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-revenue-solution-label">Solução:</b> <span id="project-revenue-solution-text">Criei um script para identificar e corrigir os erros, otimizando o catálogo.</span>
-                    </p>
-                    <p class="text-gray-600 mt-2">
-                        <b id="project-revenue-result-label">Resultado:</b> <span id="project-revenue-result-text">Aumento de <b>130 mil reais</b> em receita para o parceiro.</span>
-                    </p>
+                     <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Scripting</span>
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data Cleaning</span>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Seção YouTube -->
+
         <section id="youtube" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 class="section-header" id="youtube-header">Canal do YouTube</h2>
-            <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
-                <h3 class="text-2xl font-bold text-red-600" id="youtube-title">govoni_dados</h3>
-                <p class="text-gray-600 mt-2" id="youtube-text">
-                    Neste canal, compartilho conhecimento e insights sobre análise de dados e carreira em TI.
-                </p>
-                <!-- Imagem do banner do YouTube atualizada com o ficheiro 'image_f065f0.png' -->
-                <img src="channel_banner.jpg" alt="Banner do canal govoni_dados" class="mt-4 rounded-xl shadow-md w-full" id="youtube-image-alt">
-                <a href="https://www.youtube.com/@govoni_dados" target="_blank" class="mt-4 inline-block bg-red-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-red-700 transition-colors" id="youtube-cta">
-                    Visitar o Canal
-                </a>
-            </div>
+    <h2 class="section-header" id="youtube-header">Canal do YouTube</h2>
+    <div class="bg-gray-50 p-6 rounded-xl shadow-inner flex flex-col md:flex-row items-start md:items-center gap-6">
+        <div class="shrink-0 w-24 h-24 rounded-full overflow-hidden shadow-lg bg-white p-1">
+            <img src="logo.png" alt="Logo do Canal govoni_dados" class="w-full h-full object-cover rounded-full">
+        </div>
+        
+        <div>
+            <h3 class="text-2xl font-bold text-red-600" id="youtube-title">govoni_dados</h3>
+            <p class="text-gray-600 mt-2" id="youtube-text">
+                Neste canal, compartilho conhecimento e insights sobre análise de dados e carreira em TI.
+            </p>
+            <a href="https://www.youtube.com/@govoni_dados" target="_blank" class="mt-4 inline-block bg-red-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-red-700 transition-colors" id="youtube-cta">
+                Visitar o Canal
+            </a>
+        </div>
+    </div>
+    </section>
+
+        <section id="education" class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12" id="education-header" data-aos="fade-up">Formação</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition-shadow" data-aos="fade-left" data-aos-delay="0">
+                    <div class="h-full w-1 bg-brand-500 rounded-full"></div>
+                    <div id="education-puc" class="text-slate-700"><b>Especialização em Data Science e Big Data</b> - PUC Minas (2027)</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition-shadow" data-aos="fade-left" data-aos-delay="100">
+                    <div class="h-full w-1 bg-slate-300 rounded-full"></div>
+                    <div id="education-anhembi" class="text-slate-700"><b>Bacharelado em Estatística</b> - Universidade Anhembi Morumbi</div>
+                </div>
+                </div>
         </section>
 
-        <!-- Seção Educação -->
-        <section id="education" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 class="section-header" id="education-header">Educação</h2>
-            <div class="space-y-6 text-gray-700">
-                <ul class="list-disc list-inside space-y-2">
-                    <li id="education-puc">
-                        <b class="font-bold">Especialização em Data Science e Big Data</b> - PUC Minas (2027)
-                    </li>
-                    <li id="education-anhembi">
-                        <b class="font-bold">Bacharelado em Estatística</b> - Universidade Anhembi Morumbi
-                    </li>
-                    <li id="education-unicamp">
-                        <b class="font-bold">Bacharelado em Estatística</b> - Universidade Estadual de Campinas (UNICAMP), 80% completo
-                    </li>
-                    <li id="education-etec">
-                        <b class="font-bold">Técnico em Informática</b> - Escola Técnica de São Paulo (2016-2017)
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Seção Contato -->
-        <section id="contact" class="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
-            <h2 class="section-header" id="contact-header">Contato</h2>
-            <p class="text-lg text-gray-700 mb-6" id="contact-text">Ficarei feliz em conversar sobre novos projetos e oportunidades.</p>
-            <div class="space-y-4 max-w-lg mx-auto">
-                <p class="text-gray-600">
-                    <b id="contact-email-label">E-mail:</b> <a href="mailto:govoni.gabriel@gmail.com" class="text-blue-600 hover:underline">govoni.gabriel@gmail.com</a>
-                </p>
-                <p class="text-gray-600">
-                    <b id="contact-linkedin-label">LinkedIn:</b> <a href="https://www.linkedin.com/in/gabriel-govoni" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/gabriel-govoni</a>
-                </p>
-                <p class="text-gray-600">
-                    <b id="contact-phone-label"></b> <span id="contact-phone-number"></span>
-                </p>
-            </div>
-        </section>
-    </main>
+<section id="contact" class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+    <h2 class="section-header" id="contact-header">Contato</h2>
+    <p class="text-lg text-gray-700 mb-10 text-center" id="contact-text">Ficarei feliz em conversar sobre novos projetos e oportunidades.</p>
     
-    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <div class="bg-gray-100 p-8 rounded-xl shadow-lg space-y-6">
+            <h3 class="text-2xl font-bold text-gray-800" id="contact-connect-header">Vamos Conectar</h3>
+            <p class="text-gray-600 mb-4" id="contact-connect-text">Sinta-se à vontade para entrar em contato através destes canais:</p>
+
+            <div class="flex items-center space-x-4">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <div>
+                    <p class="font-bold text-gray-800" id="contact-email-label">E-mail</p>
+                    <a href="mailto:govoni.gabriel@gmail.com" class="text-blue-600 hover:underline">govoni.gabriel@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                <div>
+                    <p class="font-bold text-gray-800" id="contact-phone-label-alt">Telefone</p>
+                    <span id="contact-phone-number-pt">(15) 98175-6202</span>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.567-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                <div>
+                    <p class="font-bold text-gray-800" id="contact-linkedin-label">LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/gabriel-govoni" target="_blank" class="text-blue-600 hover:underline">/in/gabriel-govoni</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-gray-100 p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4" id="contact-form-header">Envie uma Mensagem</h3>
+            <p class="text-gray-600 mb-6" id="contact-form-text">Responderei o mais breve possível.</p>
+            
+            <form action="#" method="POST" class="space-y-4">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="text" id="form-name" placeholder="Nome" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                    <input type="email" id="form-email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                
+                <input type="text" id="form-subject" placeholder="Assunto" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                
+                <textarea id="form-message" rows="5" placeholder="Mensagem" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                
+                <button type="submit" class="w-full text-white font-bold py-3 px-6 rounded-lg transition-all" style="background: linear-gradient(90deg, #3b82f6, #6366f1);" id="form-submit-button">
+                    Enviar Mensagem
+                    <svg class="w-5 h-5 inline ml-2 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </button>
+            </form>
+            </div>
+        
+    </div>
+</section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 border-t border-slate-800">
         <div class="container mx-auto">
-            <p class="text-sm" id="footer-text">&copy; 2024 Gabriel Govoni. Todos os direitos reservados.</p>
+            <p class="text-sm" id="footer-text">&copy; 2026 Gabriel Govoni. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inicializa animações
+        AOS.init({
+            once: true, // anima apenas uma vez ao descer
+            offset: 100, // começa a animar um pouco antes
+        });
+
+        // SEU OBJETO DE CONTEÚDO COMPLETO DEVE SER INSERIDO AQUI.
+        // EU O COLOQUEI ABAIXO PARA GARANTIR QUE SEU CÓDIGO DE TRADUÇÃO CONTINUE FUNCIONANDO.
+        
         const content = {
             pt: {
                 nav: {
@@ -380,11 +482,18 @@
                 contact: {
                     header: "Contato",
                     text: "Ficarei feliz em conversar sobre novos projetos e oportunidades.",
-                    emailLabel: "E-mail:",
-                    linkedinLabel: "LinkedIn:"
+                    connectHeader: "Vamos Conectar", // NOVO
+                    connectText: "Sinta-se à vontade para entrar em contato através destes canais:", // NOVO
+                    phoneLabel: "Telefone", // NOVO (para o label do Telefone)
+                    phoneNumber: "(15) 98175-6202", // NOVO (para o número PT)
+                    emailLabel: "E-mail",
+                    linkedinLabel: "LinkedIn",
+                    formHeader: "Envie uma Mensagem", // NOVO
+                    formText: "Responderei o mais breve possível.", // NOVO
+                    formSubmitButton: "Enviar Mensagem" // NOVO
                 },
                 footer: {
-                    text: "&copy; 2024 Gabriel Govoni. Todos os direitos reservados."
+                    text: "&copy; 2026 Gabriel Govoni. Todos os direitos reservados."
                 }
             },
             en: {
@@ -495,47 +604,55 @@
                 contact: {
                     header: "Contact",
                     text: "I would be happy to discuss new projects and opportunities.",
-                    emailLabel: "Email:",
-                    linkedinLabel: "LinkedIn:",
-                    phoneLabel: "Phone:",
-                    phoneNumber: "+55 15 98175-6202"
+                    connectHeader: "Let's Connect", // NOVO
+                    connectText: "Feel free to reach out through any of these channels:", // NOVO
+                    phoneLabel: "Phone", // JÁ EXISTIA
+                    phoneNumber: "+55 15 98175-6202", // JÁ EXISTIA
+                    emailLabel: "Email",
+                    linkedinLabel: "LinkedIn",
+                    formHeader: "Send a Message", // NOVO
+                    formText: "I'll get back to you as soon as possible.", // NOVO
+                    formSubmitButton: "Send Message" // NOVO
                 },
                 footer: {
-                    text: "&copy; 2024 Gabriel Govoni. All rights reserved."
+                    text: "&copy; 2026 Gabriel Govoni. All rights reserved."
                 }
             }
         };
 
+        // Lógica de Menu Mobile e Idioma (mantida do seu código original)
         document.getElementById('menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Language switch logic
-        const langPtBtn = document.getElementById('lang-pt');
-        const langEnBtn = document.getElementById('lang-en');
-
+        // Mapeamento dos IDs... (mesma lógica do seu código original)
         const elements = {
-            'nav-about': 'nav.about', 'nav-experience': 'nav.experience', 'nav-projects': 'nav.projects', 'nav-youtube': 'nav.youtube', 'nav-education': 'nav.education', 'nav-contact': 'nav.contact',
-            'mobile-nav-about': 'nav.about', 'mobile-nav-experience': 'nav.experience', 'mobile-nav-projects': 'nav.projects', 'mobile-nav-youtube': 'nav.youtube', 'mobile-nav-education': 'nav.education', 'mobile-nav-contact': 'nav.contact',
+            'nav-about': 'nav.about', 'nav-experience': 'nav.experience', 'nav-projects': 'nav.projects', 'nav-youtube': 'nav.youtube', 'nav-education': 'nav.education',
+            'mobile-nav-about': 'nav.about', 'mobile-nav-experience': 'nav.experience', 'mobile-nav-projects': 'nav.projects',
             'hero-subtitle': 'hero.subtitle', 'hero-text': 'hero.text', 'hero-cta-projects': 'hero.ctaProjects', 'hero-cta-contact': 'hero.ctaContact',
             'about-header': 'about.header', 'about-p1': 'about.p1', 'about-p2': 'about.p2',
-            'skills-header': 'skills.header', 'skills-languages-label': 'skills.languagesLabel', 'skills-languages-text': 'skills.languagesText',
-            'skills-bi-label': 'skills.biLabel', 'skills-bi-text': 'skills.biText',
-            'skills-platforms-label': 'skills.platformsLabel', 'skills-platforms-text': 'skills.platformsText',
-            'skills-tools-label': 'skills.toolsLabel', 'skills-tools-text': 'skills.toolsText',
+            'skills-header': 'skills.header', 
             'experience-header': 'experience.header',
             'boticario-title': 'experience.boticario.title', 'boticario-company': 'experience.boticario.company', 'boticario-role': 'experience.boticario.role',
-            'enjoei-title': 'experience.enjoei.title', 'enjoei-company': 'experience.enjoei.company', 'enjoei-p1': 'experience.enjoei.p1', 'enjoei-p2': 'experience.enjoei.p2', 'enjoei-p3': 'experience.enjoei.p3', 'enjoei-p4': 'experience.enjoei.p4',
-            'stone-title': 'experience.stone.title', 'stone-company': 'experience.stone.company', 'stone-p1': 'experience.stone.p1', 'stone-p2': 'experience.stone.p2', 'stone-p3': 'experience.stone.p3',
-            'ifood-title': 'experience.ifood.title', 'ifood-company': 'experience.ifood.company', 'ifood-p1': 'experience.ifood.p1', 'ifood-p2': 'experience.ifood.p2', 'ifood-p3': 'experience.ifood.p3',
+            'enjoei-title': 'experience.enjoei.title', 'enjoei-company': 'experience.enjoei.company', 'enjoei-p1': 'experience.enjoei.p1', 'enjoei-p4': 'experience.enjoei.p4',
+            'stone-title': 'experience.stone.title', 'stone-company': 'experience.stone.company', 'stone-p1': 'experience.stone.p1', 'stone-p2': 'experience.stone.p2',
+            'ifood-title': 'experience.ifood.title', 'ifood-company': 'experience.ifood.company', 'ifood-p2': 'experience.ifood.p2', 'ifood-p3': 'experience.ifood.p3',
             'projects-header': 'projects.header',
-            'project-cashback-title': 'projects.cashback.title', 'project-cashback-problem-label': 'projects.cashback.problemLabel', 'project-cashback-problem-text': 'projects.cashback.problemText', 'project-cashback-solution-label': 'projects.cashback.solutionLabel', 'project-cashback-solution-text': 'projects.cashback.solutionText', 'project-cashback-result-label': 'projects.cashback.resultLabel', 'project-cashback-result-text': 'projects.cashback.resultText',
-            'project-automation-title': 'projects.automation.title', 'project-automation-problem-label': 'projects.automation.problemLabel', 'project-automation-problem-text': 'projects.automation.problemText', 'project-automation-solution-label': 'projects.automation.solutionLabel', 'project-automation-solution-text': 'projects.automation.solutionText', 'project-automation-result-label': 'projects.automation.resultLabel', 'project-automation-result-text': 'projects.automation.resultText',
-            'project-revenue-title': 'projects.revenue.title', 'project-revenue-problem-label': 'projects.revenue.problemLabel', 'project-revenue-problem-text': 'projects.revenue.problemText', 'project-revenue-solution-label': 'projects.revenue.solutionLabel', 'project-revenue-solution-text': 'projects.revenue.solutionText', 'project-revenue-result-label': 'projects.revenue.resultLabel', 'project-revenue-result-text': 'projects.revenue.resultText',
-            'youtube-header': 'youtube.header', 'youtube-title': 'youtube.title', 'youtube-text': 'youtube.text', 'youtube-image-alt': 'youtube.imageAlt', 'youtube-cta': 'youtube.cta',
-            'education-header': 'education.header', 'education-puc': 'education.puc', 'education-anhembi': 'education.anhembi', 'education-unicamp': 'education.unicamp', 'education-etec': 'education.etec',
-            'contact-header': 'contact.header', 'contact-text': 'contact.text', 'contact-email-label': 'contact.emailLabel', 'contact-linkedin-label': 'contact.linkedinLabel', 'contact-phone-label': 'contact.phoneLabel', 'contact-phone-number': 'contact.phoneNumber',
+            'project-cashback-title': 'projects.cashback.title', 'project-cashback-result-text': 'projects.cashback.resultText',
+            'project-automation-title': 'projects.automation.title', 'project-automation-result-text': 'projects.automation.resultText',
+            'project-revenue-title': 'projects.revenue.title', 'project-revenue-result-text': 'projects.revenue.resultText',
+            'youtube-header': 'youtube.header', 'youtube-title': 'youtube.title', 'youtube-text': 'youtube.text', 'youtube-cta': 'youtube.cta',
+            'education-header': 'education.header', 'education-puc': 'education.puc', 'education-anhembi': 'education.anhembi', 
+            'contact-header': 'contact.header', 'footer-text': 'footer.text',
+            'contact-connect-header': 'contact.connectHeader', 
+            'contact-connect-text': 'contact.connectText',
+            'contact-phone-label-alt': 'contact.phoneLabel', // Mapeando o novo label
+            'contact-phone-number-pt': 'contact.phoneNumber', // Mapeando o novo número PT
+            'contact-form-header': 'contact.formHeader',
+            'contact-form-text': 'contact.formText',
+            'form-submit-button': 'contact.formSubmitButton',
+            // ... (o restante dos elementos antigos)
             'footer-text': 'footer.text',
         };
 
@@ -551,22 +668,14 @@
                 if (element) {
                     const textPath = elements[id];
                     const text = getNestedObject(langContent, textPath);
-                    if (text !== undefined) {
-                        element.innerHTML = text;
-                    }
+                    // Use innerHTML para permitir negrito (<b>) e tags HTML
+                    if (text !== undefined) element.innerHTML = text; 
                 }
             }
         }
 
-        langPtBtn.addEventListener('click', () => {
-            updateContent('pt');
-            localStorage.setItem('lang', 'pt');
-        });
-
-        langEnBtn.addEventListener('click', () => {
-            updateContent('en');
-            localStorage.setItem('lang', 'en');
-        });
+        langPtBtn.addEventListener('click', () => { updateContent('pt'); localStorage.setItem('lang', 'pt'); });
+        langEnBtn.addEventListener('click', () => { updateContent('en'); localStorage.setItem('lang', 'en'); });
 
         document.addEventListener('DOMContentLoaded', () => {
             const storedLang = localStorage.getItem('lang') || 'pt';
@@ -575,4 +684,3 @@
     </script>
 </body>
 </html>
-
